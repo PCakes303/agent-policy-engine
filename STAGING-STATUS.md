@@ -1,26 +1,21 @@
-# Repository 09 staging status
+# Repository 09 deployment and staging status
 
 **Target:** [PCakes303/agent-policy-engine](https://github.com/PCakes303/agent-policy-engine)  
-**GitHub repository:** Not yet created.  
-**Staging location:** `provisioning/staged/agent-policy-engine/`  
-**Visibility target:** Public · **Default branch:** `main` · **Initialization:** Empty repository, no README/license/gitignore.
+**GitHub repository:** Created; public remote exists.  
+**Staging location:** `provisioning/staged/agent-policy-engine/` in the master repository.  
+**Visibility:** Public · **Default branch:** `main`
 
-## Prepared
-- README, AGENTS.md, llms.txt
-- manifest, capabilities, compatibility
-- policy and decision-request JSON Schemas
-- allow/deny examples
-- deterministic evaluator and CLI
-- nine unit tests
-- pinned development dependency
-- starter build and least-privilege CI
-- contract, requirements, threat model, security policy, ADR, contributing guide
+## Deployment record
 
-## Acceptance gate after repository creation
-1. Copy this staged directory's contents to the repository root.
-2. Run CI and verify all tests pass.
-3. Verify the public metadata files and discovery links.
-4. Update master registry, public catalog, implementation status, and provisioning queue from planned to scaffolded.
-5. Keep GitHub About description and topics aligned with `docs/GITHUB-REPOSITORY-ABOUT-METADATA.md`.
+The prepared component has been deployed to the existing public repository. The original empty-remote creation instructions are superseded. This file is retained as historical deployment provenance and as a pointer to the staging source.
 
-This is prepared source, not a claim that the remote repository exists.
+## Remaining staging verification
+
+- Refresh staging-to-remote path and blob-SHA parity against the current `main` commit before portfolio-wide sign-off.
+- Do not treat historical staging presence or prior deployment as proof of current parity.
+- Keep the master registry, implementation status and public catalog authoritative for current maturity and dependencies.
+- GitHub About description and topics remain unverified/applied; consult the master metadata guide for proposed values.
+
+## Current maturity and limitations
+
+The repository contains an experimental local policy decision evaluator, Draft 2020-12 policy/request schemas, examples, tests and CI. It is not a production security boundary. It does not authenticate principals, distribute or cryptographically verify signed policy bundles, enforce decisions at protected resources, or protect itself from a compromised host.
