@@ -1,0 +1,38 @@
+{
+  "policy_version": "1.0.0",
+  "policy_id": "example-public-resource-read",
+  "default_effect": "deny",
+  "description": "Synthetic test policy; not suitable for production use.",
+  "rules": [
+    {
+      "id": "allow-agent-read",
+      "effect": "allow",
+      "principals": [
+        "agent://reader"
+      ],
+      "actions": [
+        "resource.read"
+      ],
+      "resources": [
+        "public:*"
+      ],
+      "required_scopes": [
+        "resource:read"
+      ]
+    },
+    {
+      "id": "deny-restricted",
+      "effect": "deny",
+      "principals": [
+        "*"
+      ],
+      "actions": [
+        "*"
+      ],
+      "resources": [
+        "restricted:*"
+      ],
+      "required_scopes": []
+    }
+  ]
+}
