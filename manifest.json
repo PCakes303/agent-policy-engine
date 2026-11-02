@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "manifest_version": "1.0.0",
+  "id": "policy-engine",
+  "name": "agent-policy-engine",
+  "visibility": "public",
+  "maturity": "scaffolding",
+  "summary": "Default-deny policy and decision-request contracts with a deterministic experimental evaluator for agent principal, action, resource, and scope authorization decisions.",
+  "license": {
+    "expression": null,
+    "status": "pending-review",
+    "notes": "License selection remains pending portfolio-wide legal and dependency review."
+  },
+  "interfaces": [
+    {
+      "name": "policy-bundle",
+      "version": "1.0.0",
+      "kind": "schema",
+      "stability": "experimental"
+    },
+    {
+      "name": "policy-decision-request",
+      "version": "1.0.0",
+      "kind": "schema",
+      "stability": "experimental"
+    },
+    {
+      "name": "policy-decision-evaluator",
+      "version": "0.1.0",
+      "kind": "cli",
+      "stability": "experimental"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "foundation",
+      "constraint": "contract dependency; version TBD",
+      "kind": "contract"
+    }
+  ],
+  "security": {
+    "threat_model": "docs/THREAT_MODEL.md",
+    "secrets_in_repository": false,
+    "data_classification": "public",
+    "security_contact": null
+  },
+  "default_branch": "main",
+  "compatibility": [],
+  "evidence": [
+    {
+      "claim": "Default-deny evaluator and schema validation are scaffolded.",
+      "kind": "test",
+      "location": "tests/test_policy_engine.py"
+    }
+  ],
+  "$id": "https://github.com/PCakes303/agent-policy-engine/blob/main/manifest.json"
+}
