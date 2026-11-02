@@ -1,0 +1,73 @@
+{
+  "capabilities_version": "1.1.0",
+  "repository": "agent-policy-engine",
+  "repository_id": "policy-engine",
+  "maturity": "scaffolding",
+  "capabilities": [
+    {
+      "id": "policy.bundle-schema",
+      "name": "Versioned policy bundle schema",
+      "status": "scaffolded",
+      "description": "A JSON Schema defines policy identity, default effect, rule effects, principals, actions, resources, and required scopes.",
+      "evidence": [
+        "schemas/policy.schema.json"
+      ],
+      "limitations": [
+        "Schema structure does not establish policy authenticity or suitability."
+      ]
+    },
+    {
+      "id": "policy.request-schema",
+      "name": "Decision request schema",
+      "status": "scaffolded",
+      "description": "A JSON Schema defines principal, action, resource, scopes, and constrained context fields.",
+      "evidence": [
+        "schemas/decision-request.schema.json"
+      ],
+      "limitations": [
+        "The schema does not authenticate the principal or authorize the request."
+      ]
+    },
+    {
+      "id": "policy.decision-evaluator",
+      "name": "Deterministic default-deny evaluator",
+      "status": "scaffolded",
+      "description": "A local evaluator validates input and applies explicit-deny-overrides and default-deny semantics.",
+      "evidence": [
+        "tools/policy_engine.py",
+        "tests/test_policy_engine.py"
+      ],
+      "limitations": [
+        "No identity authentication, remote policy distribution, resource-boundary enforcement, or production security guarantee."
+      ]
+    },
+    {
+      "id": "policy.signed-distribution",
+      "name": "Authenticated signed policy distribution",
+      "status": "planned",
+      "description": "Distribute and verify policy bundles against configured trust roots and freshness rules.",
+      "evidence": [],
+      "limitations": [
+        "No signed policy distribution or cryptographic verification is implemented."
+      ]
+    },
+    {
+      "id": "policy.resource-enforcement",
+      "name": "Protected resource enforcement adapters",
+      "status": "planned",
+      "description": "Integrate policy decisions with protected resource boundaries and fail-closed enforcement.",
+      "evidence": [],
+      "limitations": [
+        "No protected resource adapter or enforcement middleware is implemented."
+      ]
+    }
+  ],
+  "explicit_non_capabilities": [
+    "Principal authentication or identity proof",
+    "Credential issuance, rotation, or revocation",
+    "Cryptographic signing or verification of policy bundles",
+    "Remote policy distribution or policy management service",
+    "Production resource-server enforcement",
+    "Certification or compliance attestation"
+  ]
+}
