@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PCakes303/agent-policy-engine/blob/main/schemas/decision-request.schema.json",
+  "title": "Policy Decision Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "principal_id",
+    "action",
+    "resource",
+    "scopes"
+  ],
+  "properties": {
+    "principal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "action": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "resource": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "scopes": {
+      "type": "array",
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      }
+    },
+    "context": {
+      "type": "object",
+      "maxProperties": 32,
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null"
+        ]
+      }
+    }
+  }
+}
