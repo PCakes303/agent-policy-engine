@@ -1,0 +1,25 @@
+# Agent Policy Engine
+
+> Public component 09 in the MrCakes931 Agent Intelligence Ecosystem. Defines default-deny policy and request contracts plus a deterministic, experimental policy decision evaluator.
+
+## Start here
+- [README](README.md)
+- [Agent instructions](AGENTS.md)
+- [Contract](docs/CONTRACT.md)
+- [Threat model](docs/THREAT_MODEL.md)
+- [Manifest](manifest.json)
+- [Capabilities](capabilities.json)
+- [Compatibility](compatibility.json)
+- [Policy schema](schemas/policy.schema.json)
+- [Decision request schema](schemas/decision-request.schema.json)
+- [Example policy](examples/policy.json)
+- [Example request](examples/allow-request.json)
+
+## Capability boundary
+The evaluator validates schema-conformant inputs, applies explicit-deny-overrides and default-deny semantics, and returns a deterministic decision. It does not authenticate principals, distribute signed policies, or enforce decisions at protected resources. Treat it as an experimental decision-point reference, not a production authorization boundary.
+
+## Ecosystem
+- [Master control plane](https://github.com/PCakes303/agent-intelligence-ecosystem)
+- [Foundation specification](https://github.com/PCakes303/agent-foundation-spec)
+- [Identity and trust contracts](https://github.com/PCakes303/agent-identity-trust)
+- [Secure supply chain](https://github.com/PCakes303/agent-secure-supply-chain)
