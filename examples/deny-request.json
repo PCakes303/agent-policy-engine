@@ -1,0 +1,11 @@
+{
+  "principal_id": "agent://reader",
+  "action": "resource.read",
+  "resource": "restricted:document-1",
+  "scopes": [
+    "resource:read"
+  ],
+  "context": {
+    "environment": "test"
+  }
+}
